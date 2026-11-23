@@ -1,7 +1,17 @@
+import java.util.Properties
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
+
+
+val localProps = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) file.inputStream().use { load(it) }
+    }
+
 
 android {
     namespace = "com.example.joego"
@@ -17,7 +27,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue(
+            "string",
+            "mapbox_access_token",
+            localProps.getProperty("MAPBOX_ACCESS_TOKEN") ?: ""
+        )
     }
+
+
 
     buildTypes {
         release {
@@ -32,6 +50,7 @@ android {
     }
     buildFeatures {
         compose = true
+        resValues = true
     }
 }
 
@@ -51,4 +70,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    //mapbox
+    implementation("com.mapbox.maps:android-ndk27:11.34.2")
+    implementation("com.mapbox.extension:maps-compose-ndk27:11.34.2")
 }
