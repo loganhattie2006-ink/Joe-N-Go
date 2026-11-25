@@ -12,14 +12,14 @@ import com.mapbox.maps.extension.compose.animation.viewport.rememberMapViewportS
 @Composable
 fun MapScreen(modifier: Modifier = Modifier) {
     MapboxMap(
-        modifier = modifier.fillMaxSize(),
-        mapViewportState = rememberMapViewportState {
-            setCameraOptions {
-                center(Point.fromLngLat(-63.5752, 44.6488))
-                zoom(10.5) // tweak this if its too zoomed out
-                pitch(0.0)
-                bearing(0.0)
-            }
-        }
-    )
+       modifier = modifier.fillMaxSize(),
+       mapViewportState = rememberMapViewportState {
+           setCameraOptions {
+               center(Point.fromLngLat(-63.5752, 44.6488))
+               zoom(10.5) // tweak this if its too zoomed out
+               pitch(0.0)
+               bearing(0.0)
+           }
+       }
+   )
 }
