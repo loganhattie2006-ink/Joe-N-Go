@@ -73,4 +73,7 @@ dependencies {
     //mapbox
     implementation("com.mapbox.maps:android-ndk27:11.34.2")
     implementation("com.mapbox.extension:maps-compose-ndk27:11.34.2")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
 }
