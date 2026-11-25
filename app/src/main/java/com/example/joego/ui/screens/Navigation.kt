@@ -132,7 +132,7 @@ fun Navigation() {
                 MapScreen()
             }
             composable(route = "cafeList") {
-//                ScreenNameGoesHere(viewModel)
+                CafeList()
             }
         }
     }
