@@ -1,6 +1,7 @@
 package com.example.joego.ui.screens
 
 import android.Manifest
+import android.R.id.primary
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.padding
@@ -26,6 +27,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -66,7 +68,7 @@ fun Navigation() {
         topBar = {
             TopAppBar(
                 colors = topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    containerColor = MaterialTheme.colorScheme.surface,
                     titleContentColor = MaterialTheme.colorScheme.primary,
                 ),
                 title = {
@@ -86,11 +88,11 @@ fun Navigation() {
         },
         bottomBar = {
             NavigationBar(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                containerColor = MaterialTheme.colorScheme.surface,
                 windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.LocalCafe, contentDescription = "Map") },
+                    icon = { Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Map") },
                     label = { Text("Map") },
                     selected = selectedIndex == 0,
                     onClick = {
@@ -106,7 +108,7 @@ fun Navigation() {
                 )
 
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.FavoriteBorder, contentDescription = "Cafe List") },
+                    icon = { Icon(imageVector = Icons.Default.LocalCafe, contentDescription = "Cafe List") },
                     label = { Text("Cafe List") },
                     selected = selectedIndex == 1,
                     onClick = {

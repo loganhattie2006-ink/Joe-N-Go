@@ -9,35 +9,43 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import com.example.joego.ui.theme.Cream
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Green,
+    secondary = LightGreen,
+    tertiary = Grey,
+    background = Black, // background
+    surface = Brown,
+
+    onPrimary = DarkGreen,
+    onSecondary = DarkGreen,
+    onTertiary = Cream,
+    onBackground = Cream,
+    onSurface = Cream,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = Green, // Nav bar colors
+    secondary = DarkGreen, // darker color over nav bar
+    tertiary = Brown, // logos
+    background = Cream, // background
+    surface = LightGreen,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    onPrimary = DarkGreen,
+    onSecondary = Cream,
+    onTertiary = Cream,
+    onBackground = DarkGreen,
+    onSurface = DarkGreen,
 )
 
 @Composable
 fun JoeGoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false, // Dynamic color ignores the custom theme and takes from the user's wallpaper.
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
