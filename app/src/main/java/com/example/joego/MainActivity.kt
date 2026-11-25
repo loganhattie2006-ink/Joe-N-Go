@@ -17,6 +17,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.joego.ui.screens.Navigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,27 +25,29 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JoeGoTheme {
-                val viewModel: MainViewModel = viewModel()
-                val userLocation by viewModel.userLocation.collectAsStateWithLifecycle()
+                Navigation()
 
-                val permissionLauncher = rememberLauncherForActivityResult(
-                    ActivityResultContracts.RequestMultiplePermissions()) { results ->
-                    viewModel.onPermissionResult(results.values.any { it })
-                }
-                LaunchedEffect(Unit) {
-                    if (viewModel.locationPermissionGranted.value) {viewModel.fetchLocation()
-                    } else {
-                        permissionLauncher.launch(
-                            arrayOf(
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION
-                            )
-                        )
-                    }
-                }
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MapScreen(modifier = Modifier.padding(innerPadding)) // just set to open map for testing, change later
-                }
+//                val viewModel: MainViewModel = viewModel()
+//                val userLocation by viewModel.userLocation.collectAsStateWithLifecycle()
+//
+//                val permissionLauncher = rememberLauncherForActivityResult(
+//                    ActivityResultContracts.RequestMultiplePermissions()) { results ->
+//                    viewModel.onPermissionResult(results.values.any { it })
+//                }
+//                LaunchedEffect(Unit) {
+//                    if (viewModel.locationPermissionGranted.value) {viewModel.fetchLocation()
+//                    } else {
+//                        permissionLauncher.launch(
+//                            arrayOf(
+//                                Manifest.permission.ACCESS_FINE_LOCATION,
+//                                Manifest.permission.ACCESS_COARSE_LOCATION
+//                            )
+//                        )
+//                    }
+//                }
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    MapScreen(modifier = Modifier.padding(innerPadding)) // just set to open map for testing, change later
+//                }
             }
         }
     }
