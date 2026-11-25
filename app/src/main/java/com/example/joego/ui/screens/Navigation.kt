@@ -1,5 +1,8 @@
 package com.example.joego.ui.screens
 
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FavoriteBorder
@@ -17,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -38,6 +42,25 @@ fun Navigation() {
     val mainViewModel: MainViewModel = viewModel()
     val navController = rememberNavController()
     var selectedIndex by remember { mutableIntStateOf(0) } // default set to 0
+
+    // START:   Permission for device location
+    val launcher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { results ->
+        if (results.values.any { it }) {
+            mainViewModel.refreshLocation() // call a function to get the current location for device
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        launcher.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+        )
+    }
+    // END:     Permission for device location
 
     Scaffold(
         topBar = {
