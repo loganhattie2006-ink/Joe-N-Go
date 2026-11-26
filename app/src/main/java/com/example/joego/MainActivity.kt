@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.joego.ui.screens.Navigation
+import com.example.joego.ui.screens.UserMarker
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JoeGoTheme {
                 Navigation()
+
 
 //                val viewModel: MainViewModel = viewModel()
 //                val userLocation by viewModel.userLocation.collectAsStateWithLifecycle()

@@ -48,10 +48,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun fetchLocation() {
         if (!checkPermission()) return
 
-        fusedLocationClient
+        fusedLocationClient// get ths user device location current
             .getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, null)
             .addOnSuccessListener { location ->
-                if (location != null) {
+                if (location != null) {//checks if the location is null
                     _userLocation.value = UserLocation(location.latitude, location.longitude)
                 } else {
                     fusedLocationClient.lastLocation.addOnSuccessListener { last ->
@@ -71,7 +71,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     @SuppressLint("MissingPermission") // silence warning
     fun refreshLocation() {
-        fusedLocationClient
+        fusedLocationClient// this gets the gps from the device
             .getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null)
             .addOnSuccessListener { result ->
                 location = result
