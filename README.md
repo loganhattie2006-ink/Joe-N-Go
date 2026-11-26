@@ -1,10 +1,10 @@
 
 ﻿# Joe-N-Go
 a coffee shop to order your coffee  on the go 
-Dark mode:
+Dark mode:   Light mode:
 <img width="100" height="400" alt="Screenshot_20261125_123700_JoeGo" src="https://github.com/user-attachments/assets/7f9005c8-2efd-4c72-9156-c2cd4c9e40e3" />
 
-Light mode:
+
 <img width="100" height="400" alt="Screenshot_20261125_123649_JoeGo" src="https://github.com/user-attachments/assets/1e7833ff-9e2c-4a63-871f-633e117be7ff" />
 
 class: MOBI 3002
