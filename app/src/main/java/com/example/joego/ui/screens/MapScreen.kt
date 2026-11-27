@@ -25,7 +25,7 @@ fun MapScreen(modifier: Modifier = Modifier) {
                pitch(0.0)
                bearing(0.0)
            }
-       }
+       }// trying to commit
 
            )
     {
