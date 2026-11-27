@@ -1,4 +1,4 @@
-<img width="1000" height="300" alt="Banner" src="https://github.com/user-attachments/assets/04ad3caa-e809-4bda-87f2-8af76a6dc34d" />
+<img width="1000" height="200" alt="Banner" src="https://github.com/user-attachments/assets/0bf42faf-b743-4eed-bf23-571b39744fde" />
 
 **Joe-N-Go** is a coffee shop locator app to help you find a place to buy your cup of joe, and go! 
 
