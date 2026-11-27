@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
             JoeGoTheme {
                 Navigation()
 
+
 //                val viewModel: MainViewModel = viewModel()
 //                val userLocation by viewModel.userLocation.collectAsStateWithLifecycle()
 //
