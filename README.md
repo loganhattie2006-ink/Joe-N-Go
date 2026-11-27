@@ -14,7 +14,7 @@ This project uses android 17.0 and works with One UI 8.5. We also use mapbox api
 you will be able to see all the local coffee shop in halifax and see open/closing hours/ address 
 
 
-## Team memebers
+## Team members
 class: MOBI 3002
 - Myah: https://github.com/MyahBowley
 - Jayden: https://github.com/jayden-walsh
