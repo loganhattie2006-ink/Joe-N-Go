@@ -16,11 +16,14 @@ you will be able to see all the local coffee shop in halifax and see open/closin
 
 ## Team members
 class: MOBI 3002
-- Myah: https://github.com/MyahBowley
-- Jayden: https://github.com/jayden-walsh
-- Nate: https://github.com/NateT-15
-- Logan: https://github.com/loganhattie2006-ink
-- Logan: https://github.com/LoganH-nscc
+- [Myah](https://github.com/MyahBowley)
+- [Jayden](https://github.com/jayden-walsh)
+- [Nate](https://github.com/NateT-15)
+- [Logan](https://github.com/loganhattie2006-ink)
+- [Logan (School Account)](https://github.com/LoganH-nscc)
 
 ## How to Run
-"add here"
+1. Download zip file and open it.
+2. Go into Android Studio, and open the project.
+3. Go to: GradleScripts/local.properties and add your mapbox access token. Ex: MAPBOX_ACCESS_TOKEN=pk.theRestOfIt
+4. Run app on an emulator or your android device.
